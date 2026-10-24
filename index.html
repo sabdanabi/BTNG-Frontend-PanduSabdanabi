@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoPrime - Showroom Mobil Bekas Berkualitas & Terpercaya</title>
+  <meta name="description" content="Pusat jual beli mobil bekas berkualitas, bergaransi, dan siap pakai. Temukan berbagai merk terbaik dengan harga transparan.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-car-rear"></i>
+        </div>
+        <div class="brand-text">
+          <span>Auto<strong>Prime</strong></span>
+          <small>Showroom Mobil Bekas</small>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#katalog" class="nav-link active">Katalog Mobil</a>
+        <a href="#keunggulan" class="nav-link">Keunggulan</a>
+        <a href="#testimoni" class="nav-link">Testimoni</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/6281234567890?text=Halo%20AutoPrime,%20saya%20ingin%20tanya%20unit%20mobil%20bekas" target="_blank" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Hubungi Sales</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-certificate"></i> Inspeksi 160 Titik & Garansi Mesin 1 Tahun
+        </div>
+        <h1 class="hero-title">
+          Temukan <span>Mobil Impian</span> Bekas Berkualitas, Rasa Baru
+        </h1>
+        <p class="hero-desc">
+          Transparan, bebas banjir, bebas tabrakan, dan lulus sertifikasi resmi. Beli mobil bekas dengan rasa aman dan proses cepat.
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <h3 id="stat-total-unit">0+</h3>
+            <p>Pilihan Unit</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <h3>100%</h3>
+            <p>Lolos Inspeksi</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <h3>1 Thn</h3>
+            <p>Garansi Mesin</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <h3>4.9 ★</h3>
+            <p>Kepuasan Pelanggan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Section: Katalog Mobil -->
+  <main class="main-content" id="katalog">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <div>
+          <span class="sub-heading">Katalog Unggulan</span>
+          <h2 class="main-heading">Daftar Mobil Siap Pakai</h2>
+        </div>
+        <p class="section-desc">Pilih unit terbaik dengan berbagai varian transmisi, bahan bakar, dan harga terbaik.</p>
+      </div>
+
+      <!-- Filter & Search Toolbar -->
+      <div class="filter-toolbar">
+        <!-- Search Input -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Cari nama mobil, merk (cth: Fortuner, Honda, Listrik)..." autocomplete="off">
+          <button id="clearSearchBtn" class="clear-btn" title="Hapus pencarian" style="display: none;">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Filter Selects -->
+        <div class="filter-group">
+          <!-- Filter Brand -->
+          <div class="select-wrapper">
+            <i class="fa-solid fa-tag select-icon"></i>
+            <select id="filterBrand">
+              <option value="all">Semua Brand</option>
+            </select>
+          </div>
+
+          <!-- Filter Bahan Bakar -->
+          <div class="select-wrapper">
+            <i class="fa-solid fa-gas-pump select-icon"></i>
+            <select id="filterFuel">
+              <option value="all">Semua Bahan Bakar</option>
+              <option value="Bensin">Bensin</option>
+              <option value="Diesel">Diesel</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Listrik">Listrik (EV)</option>
+            </select>
+          </div>
+
+          <!-- Filter Status -->
+          <div class="select-wrapper">
+            <i class="fa-solid fa-circle-check select-icon"></i>
+            <select id="filterStatus">
+              <option value="all">Semua Status</option>
+              <option value="tersedia">Tersedia</option>
+              <option value="sold">Sudah Terjual</option>
+            </select>
+          </div>
+
+          <!-- Sort Order -->
+          <div class="select-wrapper">
+            <i class="fa-solid fa-arrow-down-short-wide select-icon"></i>
+            <select id="sortOrder">
+              <option value="default">Urutan Default</option>
+              <option value="price-asc">Harga: Terendah</option>
+              <option value="price-desc">Harga: Tertinggi</option>
+              <option value="year-desc">Tahun: Terbaru</option>
+              <option value="name-asc">Nama: A - Z</option>
+            </select>
+          </div>
+
+          <!-- Reset Filter Button -->
+          <button id="resetFilterBtn" class="btn-reset" title="Reset Semua Filter">
+            <i class="fa-solid fa-rotate-left"></i>
+            <span>Reset</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Result Info Counter -->
+      <div class="result-info-bar">
+        <div class="result-text" id="resultCount">Menampilkan data...</div>
+        <div class="data-source-badge">
+          <i class="fa-solid fa-link"></i> Live API: <span>api-web.dnccudinus.org</span>
+        </div>
+      </div>
+
+      <!-- State Containers -->
+      <!-- Loading Skeleton Container -->
+      <div id="loadingState" class="cars-grid">
+        <!-- 6 Skeletons generated by default -->
+        <div class="skeleton-card">
+          <div class="skeleton-img"></div>
+          <div class="skeleton-body">
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-line half"></div>
+            <div class="skeleton-pills">
+              <div class="skeleton-pill"></div>
+              <div class="skeleton-pill"></div>
+              <div class="skeleton-pill"></div>
+            </div>
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-btn"></div>
+          </div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-img"></div>
+          <div class="skeleton-body">
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-line half"></div>
+            <div class="skeleton-pills">
+              <div class="skeleton-pill"></div>
+              <div class="skeleton-pill"></div>
+              <div class="skeleton-pill"></div>
+            </div>
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-btn"></div>
+          </div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-img"></div>
+          <div class="skeleton-body">
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-line half"></div>
+            <div class="skeleton-pills">
+              <div class="skeleton-pill"></div>
+              <div class="skeleton-pill"></div>
+              <div class="skeleton-pill"></div>
+            </div>
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-btn"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Error State -->
+      <div id="errorState" class="state-message" style="display: none;">
+        <div class="state-icon error-icon">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h3>Gagal Memuat Data Mobil</h3>
+        <p id="errorMessage">Terjadi kendala saat mengambil data dari server API.</p>
+        <button id="retryBtn" class="btn-primary">
+          <i class="fa-solid fa-rotate-right"></i> Coba Lagi
+        </button>
+      </div>
+
+      <!-- Empty / Not Found State -->
+      <div id="emptyState" class="state-message" style="display: none;">
+        <div class="state-icon empty-icon">
+          <i class="fa-solid fa-car-tunnel"></i>
+        </div>
+        <h3>Mobil Tidak Ditemukan</h3>
+        <p>Coba gunakan kata kunci lain atau ubah filter pencarian Anda.</p>
+        <button id="resetSearchEmptyBtn" class="btn-secondary">
+          <i class="fa-solid fa-rotate-left"></i> Bersihkan Filter
+        </button>
+      </div>
+
+      <!-- Cars Card Grid Container -->
+      <div id="carsGrid" class="cars-grid" style="display: none;"></div>
+
+    </div>
+  </main>
+
+  <!-- Features / Keunggulan Section -->
+  <section class="features-section" id="keunggulan">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading">Standar Kualitas</span>
+        <h2 class="main-heading">Mengapa Memilih AutoPrime?</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Garansi Mesin & Transmisi</h3>
+          <p>Setiap mobil dilengkapi proteksi garansi hingga 1 tahun tanpa biaya tambahan.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+          <h3>Lulus 160 Titik Inspeksi</h3>
+          <p>Dipastikan 100% bebas dari bekas banjir, tabrakan berat, serta manipulasi odometer.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-file-invoice"></i>
+          </div>
+          <h3>Kelengkapan Dokumen Sah</h3>
+          <p>BPKB, STNK, dan Faktur terverifikasi keasliannya dan siap balik nama langsung.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <h3>Harga Bersih & Transparan</h3>
+          <p>Tidak ada biaya tersembunyi. Tersedia simulasi cicilan dan tukar tambah mobil lama.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Purchase Modal (Beli Mobil Modal) -->
+  <div id="buyModal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-wrapper">
+          <span class="badge-modal">Form Pemesanan / Booking</span>
+          <h3 id="modalCarName">Beli Mobil</h3>
+        </div>
+        <button class="modal-close" id="closeModalBtn" aria-label="Tutup Modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Selected Car Preview -->
+        <div class="modal-car-preview">
+          <div class="modal-img-wrapper">
+            <img id="modalCarImg" src="" alt="Foto Mobil">
+          </div>
+          <div class="modal-car-info">
+            <span id="modalCarBrand" class="modal-car-brand">BRAND</span>
+            <h4 id="modalCarTitle">Nama Mobil</h4>
+            <div class="modal-price" id="modalCarPrice">Rp 0</div>
+            
+            <div class="modal-spec-grid">
+              <div class="spec-mini"><i class="fa-regular fa-calendar"></i> <span id="modalCarYear">2024</span></div>
+              <div class="spec-mini"><i class="fa-solid fa-gears"></i> <span id="modalCarTransmission">Matic</span></div>
+              <div class="spec-mini"><i class="fa-solid fa-gas-pump"></i> <span id="modalCarFuel">Bensin</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Form -->
+        <form id="orderForm" class="order-form">
+          <div class="form-group">
+            <label for="buyerName"><i class="fa-solid fa-user"></i> Nama Lengkap</label>
+            <input type="text" id="buyerName" placeholder="Contoh: Muhammad Pandu" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="buyerPhone"><i class="fa-brands fa-whatsapp"></i> Nomor WhatsApp</label>
+              <input type="tel" id="buyerPhone" placeholder="08xxxxxxxxxx" required>
+            </div>
+            <div class="form-group">
+              <label for="paymentMethod"><i class="fa-solid fa-wallet"></i> Metode Pembelian</label>
+              <select id="paymentMethod" required>
+                <option value="Cash Keras">Pembayaran Tunai (Cash)</option>
+                <option value="Kredit / Cicilan">Kredit / Leasing Syariah</option>
+                <option value="Tukar Tambah">Tukar Tambah (Trade-In)</option>
+                <option value="Booking Test Drive">Booking Test Drive Dulu</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="buyerNotes"><i class="fa-regular fa-comment-dots"></i> Catatan Tambahan (Opsional)</label>
+            <textarea id="buyerNotes" rows="2" placeholder="Tuliskan jadwal kunjungan, domisili, atau pertanyaan spesifik..."></textarea>
+          </div>
+
+          <div class="form-guarantee-note">
+            <i class="fa-solid fa-shield-cat"></i>
+            <span>Booking dijamin aman. Tim konsultan AutoPrime akan menghubungi Anda dalam 15 menit.</span>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn-cancel" id="cancelOrderBtn">Batal</button>
+            <button type="submit" class="btn-confirm-buy">
+              <i class="fa-solid fa-cart-shopping"></i> Konfirmasi & Lanjut WhatsApp
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast">
+    <div class="toast-icon">
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <div class="toast-content">
+      <h4 id="toastTitle">Berhasil!</h4>
+      <p id="toastMessage">Pemesanan berhasil diproses.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="kontak">
+    <div class="container footer-content">
+      <div class="footer-brand-col">
+        <div class="nav-brand">
+          <div class="brand-icon">
+            <i class="fa-solid fa-car-rear"></i>
+          </div>
+          <div class="brand-text">
+            <span>Auto<strong>Prime</strong></span>
+            <small>Showroom Mobil Bekas</small>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Platform e-commerce mobil bekas terpercaya. Menghadirkan pilihan kendaraan roda empat dengan standar kelayakan tinggi dan harga kompetitif.
+        </p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Layanan Cepat</h4>
+        <ul>
+          <li><a href="#katalog">Katalog Mobil Bekas</a></li>
+          <li><a href="#">Simulasi Kredit</a></li>
+          <li><a href="#">Layanan Tukar Tambah</a></li>
+          <li><a href="#">Layanan Inspeksi Mandiri</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h4>Hubungi Showroom</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Jl. Imam Bonjol No. 207, Semarang</p>
+        <p><i class="fa-solid fa-phone"></i> (024) 865-9921 / 0812-3456-7890</p>
+        <p><i class="fa-regular fa-envelope"></i> sales@autoprime-bekas.id</p>
+        <p><i class="fa-regular fa-clock"></i> Buka Setiap Hari: 08:30 - 18:00 WIB</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 AutoPrime Showroom. Data resmi terhubung dengan API DNCC UDINUS.</p>
+        <p>Praktikum Pemrograman Berbasis Web (Pertemuan 6).</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
